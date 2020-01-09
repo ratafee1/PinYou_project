@@ -80,7 +80,11 @@
             <artifactId>servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.pinyougou</groupId>
+            <artifactId>pinyougou-sellergoods-interface</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 
@@ -96,6 +100,19 @@
                     <port>9101</port>
                     <!-- 请求路径 -->
                     <path>/</path>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>WEB-INF</directory>
+                        </resource>
+                    </webResources>
                 </configuration>
             </plugin>
         </plugins>
